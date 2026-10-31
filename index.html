@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17131a"><title>Heartmate — Your AI Companion</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-icon">♡</div><div><b>heartmate</b><small>YOUR AI COMPANION</small></div></div>
+    <button class="new-chat" id="newChat">＋ &nbsp; Percakapan baru</button>
+    <div class="section-label">MENU</div>
+    <div class="nav active">♡ <span>Teman ngobrol</span></div>
+    <button class="nav" id="profileOpen">✧ <span>Personalisasi pasangan</span></button>
+    <div class="sidebar-bottom">
+      <div class="connection"><i id="statusDot"></i><span id="statusText">Memeriksa koneksi…</span></div>
+      <p>Ruang percakapan virtual yang hangat. Riwayat tersimpan di browser ini.</p>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+      <div class="avatar" id="avatar">A</div>
+      <div class="person"><strong id="headerName">Alya</strong><small><i></i> AI companion · siap ngobrol</small></div>
+      <button class="more" id="profileOpen2" title="Personalisasi">•••</button>
+    </header>
+    <section class="chat" id="chat">
+      <div class="welcome" id="welcome">
+        <div class="heart-art">♡</div>
+        <div class="overline">A LITTLE SPACE FOR TWO</div>
+        <h1>Hai, kamu. <span>♡</span></h1>
+        <p id="welcomeText">Senang kamu mampir. Mau cerita apa hari ini?</p>
+        <div class="starter-grid">
+          <button data-message="Hai, hari kamu gimana?">☀️ <span><b>Obrolan ringan</b><small>Mulai dari sapaan sederhana</small></span></button>
+          <button data-message="Aku lagi capek hari ini. Temenin ngobrol, ya.">☕ <span><b>Temenin aku</b><small>Cerita tentang hari ini</small></span></button>
+          <button data-message="Coba ceritain sesuatu yang lucu dong.">☺ <span><b>Bikin aku ketawa</b><small>Cari mood yang lebih baik</small></span></button>
+        </div>
+      </div>
+      <div class="messages" id="messages"></div>
+    </section>
+    <footer class="composer-area">
+      <form id="chatForm" class="composer">
+        <textarea id="messageInput" rows="1" maxlength="12000" placeholder="Ketik sesuatu untuk Alya…" aria-label="Pesan"></textarea>
+        <div class="composer-tools"><span>Enter untuk kirim · Shift + Enter untuk baris baru</span><button id="sendButton" type="submit">↑</button></div>
+      </form>
+      <div class="fineprint">Heartmate adalah karakter AI virtual, bukan manusia sungguhan. Gunakan sebagai teman ngobrol, bukan pengganti hubungan nyata.</div>
+    </footer>
+  </main>
+</div>
+
+<div class="overlay" id="profileModal" hidden>
+  <section class="modal">
+    <div class="modal-top"><div><div class="overline">MAKE IT YOURS</div><h2>Kenalan lebih dekat</h2></div><button id="closeModal" class="close">×</button></div>
+    <p class="intro">Atur karakter dan cara dia ngobrol supaya terasa cocok dengan selera kamu.</p>
+    <div class="fields">
+      <label>Nama pasangan virtual<input id="companionName" maxlength="40" placeholder="Contoh: Alya"></label>
+      <label>Nama panggilan untuk kamu<input id="userName" maxlength="40" placeholder="Contoh: Dika"></label>
+      <label>Kepribadian<select id="personality"><option>hangat, playful, perhatian, dan sedikit jahil</option><option>kalem, dewasa, lembut, dan pengertian</option><option>ceria, humoris, spontan, dan ekspresif</option><option>cerdas, sedikit sarkastik, dan suka diskusi</option><option>romantis, manis, dan penuh perhatian</option></select></label>
+      <label>Gaya bahasa<select id="style"><option>natural dan santai</option><option>bahasa Indonesia sehari-hari, sedikit slang</option><option>lembut dan romantis</option><option>singkat, spontan, seperti chat sehari-hari</option></select></label>
+      <label>Status hubungan<select id="stage"><option>baru saling mengenal</option><option>teman dekat</option><option>pacaran virtual</option></select></label>
+      <label>Hal yang perlu dia tahu (opsional)<textarea id="extra" rows="3" maxlength="1500" placeholder="Hobi, kesukaan, topik favorit, atau hal yang sebaiknya dihindari…"></textarea></label>
+    </div>
+    <div class="modal-actions"><button class="save" id="saveProfile">Simpan karakter ♡</button></div>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+<script src="/static/app.js"></script>
+</body></html>
